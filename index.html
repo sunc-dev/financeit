@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FinanceIt</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700, 800, 900, 1000"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:100,200,300,400,500,600,700, 800, 900, 1000"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+	<!-- Load CSS stylesheet -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body id="body">
+	<main id="main">
+		<div class="app-header">
+			<div class="header-btns" id="mobileBtns">
+				<ion-icon class="btn-back" onclick="history.back(-1)" name="arrow-back-outline"></ion-icon>
+				<ion-icon class="btn-menu" name="ellipsis-vertical-outline"></ion-icon>
+			</div>
+		</div>
+		<div class="screen" id="assets">
+			<div class="wrapper">
+				<div class="header">
+					<h1>My Portfolio</h1>
+				</div>
+				<div class="asset-metric-wrap">
+					<div class="metric-frame">
+						<div class="asset-metric">
+							<span>$51,000</span>
+						</div>
+						<div class="asset-metric">
+							<div class="indicator-wrap up">
+								<ion-icon class="indicator buy" name="arrow-up-outline"></ion-icon>
+							</div>
+							<div class="indicator-wrap down">
+								<ion-icon class="indicator sell" name="arrow-down-outline"></ion-icon>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="asset-wrap">
+				<div class="asset-container">
+					<div class="flex flex-wrap">
+						<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4">
+							<div class="card asset-card">
+								<div class="card-content-wrap">
+									<div class="card-objects">
+										<div class="card-dtl">
+											<div class="asset-labels">
+												<h6>ticker</h6>
+												<h2>Name</h2>
+											</div>
+											<div class="asset-states">
+												<h2>$108.16</h2>
+												<p>price change</p>
+											</div>
+										</div>
+										<div class="actions-wrap">
+											<div class="action-items">
+												<div class="btn-trade act-frame buy">
+													<button class="actions"
+														onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+														<ion-icon name="chevron-up-outline"></ion-icon>
+													</button>
+												</div>
+												<div class="btn-trade act-frame sell">
+													<button class="actions"
+														onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+														<ion-icon name="chevron-down-outline"></ion-icon>
+													</button>
+												</div>
+											</div>
+											<div class="btn-trade">
+												<button onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+													<ion-icon class="card-icn" name="swap-horizontal-outline">
+													</ion-icon>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4">
+							<div class="card asset-card">
+								<div class="card-content-wrap">
+									<div class="card-objects">
+										<div class="card-dtl">
+											<div class="asset-labels">
+												<h6>ticker</h6>
+												<h2>Name</h2>
+											</div>
+											<div class="asset-states">
+												<h2>$108.16</h2>
+												<p>price change</p>
+											</div>
+										</div>
+										<div class="actions-wrap">
+											<div class="action-items">
+												<div class="btn-trade act-frame buy">
+													<button class="actions"
+														onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+														<ion-icon name="chevron-up-outline"></ion-icon>
+													</button>
+												</div>
+												<div class="btn-trade act-frame sell">
+													<button class="actions"
+														onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+														<ion-icon name="chevron-down-outline"></ion-icon>
+													</button>
+												</div>
+											</div>
+											<div class="btn-trade">
+												<button onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+													<ion-icon class="card-icn" name="swap-horizontal-outline">
+													</ion-icon>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4">
+							<div class="card asset-card">
+								<div class="card-content-wrap">
+									<div class="card-objects">
+										<div class="card-dtl">
+											<div class="asset-labels">
+												<h6>ticker</h6>
+												<h2>Name</h2>
+											</div>
+											<div class="asset-states">
+												<h2>$108.16</h2>
+												<p>volume</p>
+											</div>
+										</div>
+										<div class="btn-trade">
+											<a onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+												<ion-icon class="card-icn" name="swap-horizontal-outline">
+												</ion-icon>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4">
+							<div class="card asset-card">
+								<div class="card-content-wrap">
+									<div class="card-objects">
+										<div class="card-dtl">
+											<div class="asset-labels">
+												<h6>ticker</h6>
+												<h2>Name</h2>
+											</div>
+											<div class="asset-states">
+												<h2>$128.16</h2>
+												<p>volume</p>
+											</div>
+										</div>
+										<div class="btn-trade">
+											<a onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+												<ion-icon class="card-icn" name="swap-horizontal-outline">
+												</ion-icon>
+
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4">
+							<div class="card asset-card">
+								<div class="card-content-wrap">
+									<div class="card-objects">
+										<div class="card-dtl">
+											<div class="asset-labels">
+												<h6>ticker</h6>
+												<h2>Name</h2>
+											</div>
+											<div class="asset-states">
+												<h2>$108.16</h2>
+												<p>volume</p>
+											</div>
+										</div>
+										<div class="btn-trade">
+											<a onclick="showOrdersBuyBuy()">
+												<ion-icon class="card-icn" name="swap-horizontal-outline">
+												</ion-icon>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4">
+							<div class="card asset-card">
+								<div class="card-content-wrap">
+									<div class="card-objects">
+										<div class="card-dtl">
+											<div class="asset-labels">
+												<h6>ticker</h6>
+												<h2>Name</h2>
+											</div>
+											<div class="asset-states">
+												<h2>$108.16</h2>
+												<p>volume</p>
+											</div>
+										</div>
+										<div class="btn-trade">
+											<a onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+												<ion-icon class="card-icn" name="swap-horizontal-outline">
+												</ion-icon>
+
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4">
+							<div class="card asset-card">
+								<div class="card-content-wrap">
+									<div class="card-objects">
+										<div class="card-dtl">
+											<div class="asset-labels">
+												<h6>ticker</h6>
+												<h2>Name</h2>
+											</div>
+											<div class="asset-states">
+												<h2>$108.16</h2>
+												<p>volume</p>
+											</div>
+										</div>
+										<div class="btn-trade">
+											<a onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+												<ion-icon class="card-icn" name="swap-horizontal-outline">
+												</ion-icon>
+
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4">
+							<div class="card asset-card">
+								<div class="card-content-wrap">
+									<div class="card-objects">
+										<div class="card-dtl">
+											<div class="asset-labels">
+												<h6>ticker</h6>
+												<h2>Name</h2>
+											</div>
+											<div class="asset-states">
+												<h2 class=$108.16-clr>$128.16</h2>
+												<p>volume</p>
+											</div>
+										</div>
+										<div class="btn-trade">
+											<a onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+												<ion-icon class="card-icn" name="swap-horizontal-outline">
+												</ion-icon>
+
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="screen" id="accounts">
+			<div class="wrapper">
+				<div class="header">
+					<h1>My Accounts</h1>
+				</div>
+			</div>
+		</div>
+		<div class="screen" id="trades">
+			<div class="wrapper">
+				<div class="header">
+					<h1>My Trades</h1>
+				</div>
+			</div>
+		</div>
+		<div class="screen" id="markets">
+			<div class="wrapper">
+				<div class="header">
+					<h1>Markets</h1>
+				</div>
+			</div>
+		</div>
+		<div class="screen" id="ordersBuy">
+			<div class="wrapper">
+				<div class="header activity">
+					<h1>Buy</h1>
+				</div>
+				<div class="act-select-wrap">
+					<div class="icon-wrap">
+						<a>
+							<ion-icon class="opt" name="cart-outline"></ion-icon>
+						</a>
+						<div class="select-line">
+						</div>
+					</div>
+					<div class="icon-wrap">
+						<a>
+							<ion-icon class="opt" name="pricetag-outline"></ion-icon>
+						</a>
+						<div class="select-line">
+						</div>
+					</div>
+
+				</div>
+				<div class="asset-wrap">
+					<div class="asset-container trx-wrap">
+						<div class="card trx-card" id="card-chart">
+							<header class="card-header">
+								<a>
+									<ion-icon name="ellipsis-horizontal-outline" class="ops-card-icon"></ion-icon>
+
+								</a>
+							</header>
+							<div class="trx-content">
+								<div class="chart-area">
+									<canvas id="chartLinePurple"></canvas>
+								</div>
+								<!--<div class="trx-info">
+									<div class="content-label">
+										<h3>market info</h3>
+									</div>
+									<h2>Bid:<span>$XXXX</span></h2>
+									<h2>Ask:<span>$XXXX</span></h2>
+								</div>-->
+							</div>
+						</div>
+						<div class="form trx-form">
+							<div class="card-header">
+
+							</div>
+							<div class="form-data">
+								<div class="trx-info">
+									<h2>Order</h2>
+								</div>
+								<form class="form-inputs">
+									<div class="inputs">
+										<input type="text" name="qty" class="item" id="nme" required
+											autocomplete="off" />
+										<label for="nme"><span>volume</span></label>
+									</div>
+									<div class="inputs">
+										<input type="number" name="$108.16" class="item" id="$108.16" required
+											autocomplete="off" />
+										<label for="msg"><span>$108.16</span></label>
+									</div>
+									<input type="submit" value="Submit!" />
+								</form>
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="mobileNav" id="mobileNav">
+			<nav class="navi-wrap">
+				<!-- Menu icons from Font Awesome -->
+				<!-- Search for icons at: https://fontawesome.com/icons?d=gallery&m=free -->
+				<div class="nav-items">
+					<a class="menu-item active" id="assetsItem" onclick="showAssets('#assets', 0, '#assetsItem')">
+						<ion-icon name="apps-outline"></ion-icon>
+					</a>
+					<a class="menu-item" id="accountsItem" onclick="showAssets('#accounts',1 , '#accountsItem')">
+						<ion-icon name="wallet-outline"></ion-icon>
+					</a>
+					<a class="menu-item" id="tradesItem" onclick="showAssets('#trades',2, '#tradesItem')">
+						<ion-icon name="swap-horizontal-outline"></ion-icon>
+					</a>
+					<a class="menu-item" id="marketsItem" onclick="showAssets('#markets',3, '#marketsItem')">
+						<ion-icon name="stats-chart-outline"></ion-icon>
+					</a>
+				</div>
+			</nav>
+		</div>
+	</main>
+
+
+	<!-- Load JavaScript files -->
+	<script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./assets/js/plugin/chartjs.min.js"></script>
+	<script src="./assets/js/charts/demo.js"></script>
+	<script src="./assets/js/index.js"></script>
+
+	<!--Script initialize-->
+	<script>
+		$(document).ready(function () {
+			// Javascript method's body can be found in assets/js/demos.js
+			demo.initDashboardPageCharts();
+
+		});
+	</script>
+
+
+</body>
+
+</html>
