@@ -142,9 +142,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.12);
-  border-width: 0px 0 1px 0;
-  border-color: #cccc;
+
   margin-bottom: 10px;
 }
 
@@ -243,6 +241,12 @@ body {
   justify-content: center;
   margin: 15px 0;
   width: 100%;
+}
+
+#asset-gallery .card {
+  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.12);
+  border-width: 0px 0 1px 0;
+  border-color: #cccc;
 }
 
 .actions-wrap {
@@ -499,7 +503,8 @@ ion-icon {
   font-size: 24px;
 }
 
-/* unique trx screen object components */
+/* unique trx buy screen object components */
+
 .trx-wrap {
   flex-direction: row;
   justify-content: space-around;
@@ -507,8 +512,17 @@ ion-icon {
   width: calc(100% - 75px);
 }
 
+.trx-wrap .card {
+  border-width: 0;
+  box-shadow: 0;
+}
+
 #card-chart .card-header {
   background-color: rgba(0, 0, 0, 0);
+}
+
+#card-chart ion-icon {
+  font-size: 20px;
 }
 
 .trx-card {
@@ -518,8 +532,6 @@ ion-icon {
   margin: 0px;
   text-align: left;
 }
-
-
 
 .trx-content {
   display: flex;
