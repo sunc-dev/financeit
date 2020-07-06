@@ -22,9 +22,27 @@ demo = {
     },
 
 
-    initDashboardPageCharts: function () {
+    initTrendCharts: function () {
 
-        gradientChartOptionsConfigurationWithTooltipPurple = {
+        ChartOptionsConfigurationStock = {
+            layout: {
+                padding: {
+                    right: 0,
+                    left: 0,
+                    top: 0,
+                    bottom: 0
+                }
+            },
+
+            animation: {
+                tension: {
+                    duration: 1000,
+                    easing: 'linear',
+                    from: 1,
+                    to: 0,
+                    loop: true
+                }
+            },
             maintainAspectRatio: false,
             legend: {
                 display: false
@@ -43,6 +61,7 @@ demo = {
             responsive: true,
             scales: {
                 yAxes: [{
+                    display: false,
                     barPercentage: 1.6,
                     gridLines: {
                         display: false,
@@ -75,9 +94,9 @@ demo = {
         };
 
 
-        var ctx = document.getElementById("chartLinePurple").getContext("2d");
+        var ctx = document.getElementById("chartStock").getContext("2d");
 
-        var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+        var gradientStroke = ctx.createLinearGradient(0, 250, 0, 50);
 
         gradientStroke.addColorStop(1, 'rgba(72,72,176,0.2)');
         gradientStroke.addColorStop(0.2, 'rgba(72,72,176,0.0)');
@@ -107,7 +126,7 @@ demo = {
         var myChart = new Chart(ctx, {
             type: 'line',
             data: data,
-            options: gradientChartOptionsConfigurationWithTooltipPurple
+            options: ChartOptionsConfigurationStock
         });
 
     }

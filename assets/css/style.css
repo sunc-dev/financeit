@@ -83,9 +83,12 @@ body {
 #assets,
 #accounts,
 #trades,
-#markets,
-#ordersBuy {
+#markets {
   display: none;
+}
+
+#ordersBuy {
+  display: block;
 }
 
 #assets.active,
@@ -157,7 +160,7 @@ body {
 }
 
 .card-header a {
-  height: inherit
+  vertical-align: middle;
 }
 
 /* unique portfolio screen object components */
@@ -401,7 +404,7 @@ body {
   background-color: #4B1B4A;
   border-radius: 50px 50px 0 0;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-
+  z-index: 999;
 }
 
 .nav-items {
@@ -525,9 +528,9 @@ ion-icon {
 }
 
 .trx-card {
-  height: 350px;
-  width: 500px;
-  max-width: 100%;
+  height: 450px;
+  width: 100%;
+  max-width: 600px;
   margin: 0px;
   text-align: left;
 }
@@ -549,7 +552,7 @@ ion-icon {
 }
 
 .trx-info {
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .trx-info span {
@@ -566,7 +569,6 @@ ion-icon {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: 0 15px 15px 0px rgba(0, 0, 0, 0.05);
 }
 
 .trx-form {
@@ -600,13 +602,10 @@ ion-icon {
   margin-bottom: 15px
 }
 
-.form-inputs input {
-  font-size: 1.4225rem;
-  margin-bottom: 15px;
-  border-width: 0 0 3px;
-  width: 100%;
-  border-color: #3a86ff;
 
+.content-label h2 {
+  margin-left: 15px;
+  font-size: 1.0225rem;
 }
 
 .content-label h3 {
@@ -719,130 +718,134 @@ ion-icon {
   }
 }
 
-.inputs {
-  margin-bottom: 20px;
+.group {
+  position: relative;
+  margin-bottom: 45px;
 }
 
-input,
-span,
-label {
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
   display: block;
-  margin: 10px;
-  padding: 5px;
+  width: 100%;
+  border-radius: 0;
   border: none;
-  font-size: 1.225rem;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+input.in-submit {
+  border-bottom: 0px solid #bbbbbb;
 }
 
 input:focus {
-  outline: 0;
+  outline: none;
 }
 
-/* item form */
-
-input.item {
-  font-size: 1.625rem;
-  font-weight: 300;
-  border-radius: 2px;
-  margin: 0;
-  border: none;
-  width: 80%;
-  background: rgba(0, 0, 0, 0);
-  transition: padding-top 0.2s ease, margin-top 0.2s ease;
-  overflow-x: hidden;
-  /* Hack to make "rows" attribute apply in Firefox. */
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
 
-/* Underline and Placeholder */
+/* active state */
+input:focus~label,
+input:valid~label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264AE;
+}
 
-input.item+label {
-  display: block;
+/* BOTTOM BARS ================================= */
+.bar {
   position: relative;
-  white-space: nowrap;
-  padding: 5px 0;
-  margin: 0;
-  width: 10%;
-  border-top: 2px solid #FF006E;
-  -webkit-transition: width 0.4s ease;
-  transition: width 0.4s ease;
-  height: 0px;
-}
-
-input.item:focus+label {
+  display: block;
   width: 100%;
 }
 
-input.item:focus,
-input.item:valid {
-  padding-top: 35px;
-}
-
-
-input.item:focus+label>span,
-input.item:valid+label>span {
-  top: -100px;
-  font-size: 22px;
-  color: #333;
-}
-
-input.item:valid+label {
-  border-color: #3a86ff;
-}
-
-input.item:invalid {
-  box-shadow: none;
-}
-
-input.item+label>span {
-  font-weight: 300;
-  margin: 0;
+.bar:before,
+.bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
   position: absolute;
-  color: #8F8F8F;
-  font-size: 1.825rem;
-  top: -50px;
-  left: 0px;
-  z-index: -1;
-  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  background: #e9c3e9;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
 
-input[type="submit"] {
-  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
-  transition: opacity 0.2s ease, background 0.2s ease;
-  display: block;
-  opacity: 1;
-  margin: 10px 0 0 0;
-  padding: 10px;
-  cursor: pointer;
+.bar:before {
+  left: 50%;
 }
 
-input[type="submit"]:hover {
-  background: #0be881;
+.bar:after {
+  right: 50%;
 }
 
-input[type="submit"]:active {
-  background: #0be881;
+/* active state */
+input:focus~.bar:before,
+input:focus~.bar:after {
+  width: 50%;
 }
 
-input.item:valid~input[type="submit"],
-input:nth-of-type(2).item:valid~input[type="submit"] {
-  -webkit-animation: appear 1s forwards;
-  animation: appear 1s forwards;
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
-input.item:invalid~input[type="submit"],
-input:nth-of-type(2).item:invalid~input[type="submit"] {
-  display: block;
+/* active state */
+input:focus~.highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
 }
 
-@-webkit-keyframes appear {
-  100% {
-    background: #000;
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
   }
 }
 
-@keyframes appear {
-  100% {
-    background: #000;
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
   }
 }
 

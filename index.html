@@ -119,7 +119,8 @@
 												</div>
 											</div>
 											<div class="btn-trade">
-												<button onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
+												<button id="orders"
+													onclick="showAssets('#ordersBuy', 0, '#tradesItem')">
 													<ion-icon class="card-icn" name="swap-horizontal-outline">
 													</ion-icon>
 												</button>
@@ -331,49 +332,45 @@
 							<header class="card-header">
 								<a>
 									<ion-icon name="ellipsis-horizontal-outline" class="ops-card-icon"></ion-icon>
-
 								</a>
 							</header>
+							<div class="trx-info">
+							</div>
 							<div class="trx-content">
 								<div class="chart-area">
-									<canvas id="chartLinePurple"></canvas>
+									<canvas id="chartStock" width='100px' height='100px'></canvas>
 								</div>
-								<!--<div class="trx-info">
-									<div class="content-label">
-										<h3>market info</h3>
-									</div>
-									<h2>Bid:<span>$XXXX</span></h2>
-									<h2>Ask:<span>$XXXX</span></h2>
-								</div>-->
+							</div>
+							<div class="content-label">
+								<h2>Bid:<span>$XXXX</span></h2>
+								<h2>Ask:<span>$XXXX</span></h2>
 							</div>
 						</div>
 						<div class="form trx-form">
-							<div class="card-header">
 
-							</div>
 							<div class="form-data">
 								<div class="trx-info">
 									<h2>Order</h2>
 								</div>
 								<form class="form-inputs">
-									<div class="inputs">
-										<input type="text" name="qty" class="item" id="nme" required
-											autocomplete="off" />
-										<label for="nme"><span>Volume</span></label>
+									<div class="group">
+										<input type="text" required>
+										<span class="highlight"></span>
+										<span class="bar"></span>
+										<label>Price</label>
 									</div>
-									<div class="inputs">
-										<input type="number" name="$108.16" class="item" id="price" required
-											autocomplete="off" />
-										<label for="msg"><span>Price</span></label>
+
+									<div class="group">
+										<input type="text" required>
+										<span class="highlight"></span>
+										<span class="bar"></span>
+										<label>Volume</label>
 									</div>
-									<input type="submit" value="Submit!" />
+									<input class="in-submit" type="submit" value="Submit!" />
 								</form>
-
 							</div>
-
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -403,7 +400,7 @@
 	<!-- Load JavaScript files -->
 	<script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="./assets/js/plugin/chartjs.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"> </script>
 	<script src="./assets/js/charts/demo.js"></script>
 	<script src="./assets/js/index.js"></script>
 
@@ -411,7 +408,7 @@
 	<script>
 		$(document).ready(function () {
 			// Javascript method's body can be found in assets/js/demos.js
-			demo.initDashboardPageCharts();
+			demo.initTrendCharts();
 
 		});
 	</script>
