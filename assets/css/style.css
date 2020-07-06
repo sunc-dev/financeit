@@ -477,7 +477,6 @@ nav>a>p {
 
   .nav-items {
     flex-direction: column;
-    height: 50%;
   }
 
   nav .nav-items>a.active {
@@ -634,14 +633,32 @@ ion-icon {
 /* selection componenets */
 
 .act-select-wrap {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 55px;
-  height: 200px;
-  margin: 15px;
+  display: none;
+}
 
+.actions-group {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.actions-group .block {
+  width: 100%;
+  height: 40%;
+  border-radius: 0.2857rem;
+  background: #92b4f2;
+  padding: 0 7.5px;
+  cursor: pointer;
+}
+
+
+.actions-group>.block:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.actions-group>.block:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .activity {
