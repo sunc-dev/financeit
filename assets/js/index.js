@@ -35,20 +35,6 @@ function back() {
 }
 
 
-/* Chart reinanimation */
-
-
-(function () { // self calling function replaces document.ready()
-
-  //adding event listenr to button
-  document.querySelector('#orders').addEventListener('click', function () {
-
-    chart.destroy();
-    chart = new Chart(ctx, config);
-  });
-})();
-
-
 /** screen navigation functions jQuery */
 /*
 function showAssets(id, item) {

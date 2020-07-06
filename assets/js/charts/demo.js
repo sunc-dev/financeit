@@ -129,6 +129,24 @@ demo = {
             options: ChartOptionsConfigurationStock
         });
 
-    }
 
+        (function () { // self calling function replaces document.ready()
+
+            //adding event listenr to button
+            const classOrders = document.querySelectorAll('.orders')
+
+            for (let i = 0; i < classOrders.length; i++) {
+                classOrders[i].addEventListener("click", function () {
+                    myChart.destroy();
+                    myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: data,
+                        options: ChartOptionsConfigurationStock
+                    });
+                });
+            };
+        })();
+    }
 };
+
+

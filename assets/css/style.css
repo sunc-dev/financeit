@@ -10,7 +10,14 @@ body {
   text-align: center;
 }
 
+button {
+  border: none;
+  outline: none;
+}
 
+button:focus {
+  outline: none;
+}
 
 /* #notification  */
 #notification {
@@ -83,12 +90,9 @@ body {
 #assets,
 #accounts,
 #trades,
-#markets {
-  display: none;
-}
-
+#markets,
 #ordersBuy {
-  display: block;
+  display: none;
 }
 
 #assets.active,
@@ -288,6 +292,11 @@ body {
   justify-content: center;
   align-items: center;
   vertical-align: middle;
+  padding: 5px;
+}
+
+.actions span {
+  font-size: 14px;
 }
 
 .asset-card {
@@ -535,12 +544,11 @@ ion-icon {
   text-align: left;
 }
 
-.trx-content {
+.trx-chart {
   display: flex;
   position: relative;
   flex-direction: column;
   padding: 0 5px;
-  margin-bottom: 40px;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
@@ -551,8 +559,18 @@ ion-icon {
   margin: 0 15px;
 }
 
-.trx-info {
+.trx-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 600px;
   margin-top: 0px;
+}
+
+.trx-info {
+  width: 100%;
 }
 
 .trx-info span {
@@ -571,12 +589,6 @@ ion-icon {
   align-items: flex-start;
 }
 
-.trx-form {
-  width: 50%;
-  height: 400px;
-  margin: 15px;
-
-}
 
 .trx-form .card-header {
   background-color: #3a86ff;
@@ -602,6 +614,11 @@ ion-icon {
   margin-bottom: 15px
 }
 
+.content-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .content-label h2 {
   margin-left: 15px;
